@@ -1,7 +1,7 @@
 import express from "express";
-import { Task } from './models/task.js';
+import { Task } from '../models/task.js';
 
-const router = express.router();
+const router = express.Router();
 
 router.get("/",async(req,res)=>{
     const allTask = await Task.find()
