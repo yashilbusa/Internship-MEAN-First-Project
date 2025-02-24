@@ -9,10 +9,11 @@ router.get("/",async(req,res)=>{
 })
 
 router.post("/",async(req,res)=>{
+    const { title, description, completed } = req.body;
     const newTask = new Task({
-        title:req.body.title,
-        description:req.body.description,
-        completed:req.body.completed
+        title,
+        description,
+        completed
     })
     await newTask.save()
     res.json(newTask)

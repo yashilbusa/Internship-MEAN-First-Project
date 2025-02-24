@@ -7,13 +7,12 @@ import taskRoutes from './routes/tasks.js';
 const app = express()
 const port = 3012
 
-app.use("/tasks",taskRoutes)
-
 app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 dotenv.config()
 
+app.use("/tasks",taskRoutes)
 try{
     await mongoose.connect(process.env.url)
     console.log('Connected to MongoDB');
