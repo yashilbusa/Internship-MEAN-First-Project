@@ -2,9 +2,11 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-const port = 3012
+import { Task } from './models/task.js'
 
 const app = express()
+const port = 3012
+
 app.use(cors());
 dotenv.config()
 
