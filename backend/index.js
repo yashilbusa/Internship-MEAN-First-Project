@@ -10,6 +10,7 @@ const port = 3012
 app.use("/tasks",taskRoutes)
 
 app.use(cors());
+app.use(express.json())
 dotenv.config()
 
 try{
