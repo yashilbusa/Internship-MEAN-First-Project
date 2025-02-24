@@ -6,7 +6,7 @@ const port = 3012
 app.use(cors());
 
 app.get("/",(req,res)=>{
-    res.send("Hello Yashil")
+    res.send("Hello Yashil, It is Backend Server")
 })
 
 app.listen(port,(req,res)=>{

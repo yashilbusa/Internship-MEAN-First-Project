@@ -12,6 +12,6 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   getMessage():Observable<any>{
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.apiUrl,{responseType: 'text'});
   }
 }
