@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 const app = express()
 const port = 3012
 
@@ -9,6 +10,6 @@ app.get("/",(req,res)=>{
 })
 
 app.listen(port,(req,res)=>{
-    console.log(`Server Running on https://localhost:${port}`);
+    console.log(`Server Running on http://localhost:${port}`);
 })
 

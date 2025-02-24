@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  apiUrl= 'https://localhost:3012/'
+  apiUrl= 'http://localhost:3012/'
+
   constructor(private http:HttpClient) { }
 
   getMessage():any{
