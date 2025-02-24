@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import {taskRoutes} from './routes/tasks.js';
+import taskRoutes from './routes/tasks.js';
 
 const app = express()
 const port = 3012

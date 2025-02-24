@@ -18,4 +18,5 @@ router.post("/",async(req,res)=>{
     res.send(newTask)
 })
 
-module.exports = router
+// module.exports = router it gives error 
+export default router;
