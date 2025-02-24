@@ -10,6 +10,8 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent {
   message:any = ""
+  tasks:any = [];
+
 
   constructor(private apiservice: ApiService) { }
 
@@ -20,5 +22,18 @@ export class AppComponent {
           console.error(err.message)
       }
     );
-  }
+
+      this.apiservice.fetchTask().subscribe((data:any)=>{
+        this.tasks = data;
+      },(err:any)=>{
+          console.error(err.message)
+      }
+    );
+
+    //   this.apiservice.createTask(this.tasks).subscribe((data:any)=>{
+    //     this.tasks=data
+    //   }
+    // );
+
+  }  
 }

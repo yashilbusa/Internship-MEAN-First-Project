@@ -15,7 +15,7 @@ router.post("/",async(req,res)=>{
         completed:req.body.completed
     })
     await newTask.save()
-    res.send(newTask)
+    res.json(newTask)
 })
 
 // module.exports = router it gives error 

@@ -23,8 +23,6 @@ try{
     console.log(`Error Connecting to MongoDB ${err.message}`)
 }
 
-
-
 app.get("/",(req,res)=>{
     res.send("Hello Yashil, It is Backend Server")
 })
