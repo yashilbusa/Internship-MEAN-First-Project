@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
 import { JsonPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,11 @@ export class AppComponent {
   message:any = ""
   tasks:any = [];
 
+  constructor(private apiservice: ApiService, private router: Router) { }
 
-  constructor(private apiservice: ApiService) { }
-
+  goToTasks() {
+    this.router.navigate(['/tasks']);
+  }
   ngOnInit() {
       this.apiservice.getMessage().subscribe((data:any)=>{
           this.message = data
