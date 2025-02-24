@@ -16,19 +16,19 @@ export class AppComponent {
   constructor(private apiservice: ApiService) { }
 
   ngOnInit() {
-    //   this.apiservice.getMessage().subscribe((data:any)=>{
-    //       this.message = data
-    //   },(err:any)=>{
-    //       console.error(err.message)
-    //   }
-    // );
+      this.apiservice.getMessage().subscribe((data:any)=>{
+          this.message = data
+      },(err:any)=>{
+          console.error(err.message)
+      }
+    );
 
-    //   this.apiservice.fetchTask().subscribe((data:any)=>{
-    //     this.tasks = data;
-    //   },(err:any)=>{
-    //       console.error(err.message)
-    //   }
-    // );
+      this.apiservice.fetchTask().subscribe((data:any)=>{
+        this.tasks = data;
+      },(err:any)=>{
+          console.error(err.message)
+      }
+    );
 
     this.apiservice.createTask().subscribe((data:any)=>{
       this.tasks = data;
