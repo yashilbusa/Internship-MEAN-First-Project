@@ -7,11 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  apiUrl= 'http://localhost:3012'
+  apiUrl= 'http://localhost:3012/'
+  taskUrl = 'http://localhost:3012/tasks'
 
   constructor(private http:HttpClient) { }
 
   getMessage():Observable<any>{
     return this.http.get(this.apiUrl,{responseType: 'text'});
+  }
+
+  createTask(task:any):Observable<any>{
+    return this.http.post(this.taskUrl,task);
   }
 }

@@ -2,13 +2,10 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import { Task } from './models/task.js'
+import { taskRoutes } from './routes/tasks.js';
 
 const app = express()
 const port = 3012
-
-app.use(cors());
-dotenv.config()
 
 try{
     await mongoose.connect(process.env.url)
@@ -21,6 +18,10 @@ try{
     console.log(`Error Connecting to MongoDB ${err.message}`)
 }
 
+app.use(cors());
+dotenv.config()
+
+app.use("/tasks",taskRoutes)
 
 app.get("/",(req,res)=>{
     res.send("Hello Yashil, It is Backend Server")
