@@ -25,6 +25,8 @@ export class ApiService {
       "title":"Job Interview",
       "description":"Selected Or Not",
       "completed":true
-    });
+    },{
+      headers: { 'Content-Type': 'application/json' }
+  });
   }
 }

@@ -4,5 +4,8 @@
 <p>{{message}}</p>
 <hr>
 <p>Data is from MongoDB</p>
-<p>{{tasks}}</p>
+<p>{{tasks | json}}</p>
+
+<button (click)="goToTasks()">Go to Tasks</button>
+
 
