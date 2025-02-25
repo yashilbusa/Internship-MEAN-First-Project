@@ -16,9 +16,6 @@ export class AppComponent {
 
   constructor(private apiservice: ApiService, private router: Router) { }
 
-  goToTasks() {
-    this.router.navigate(['/tasks']);
-  }
   ngOnInit() {
       this.apiservice.getMessage().subscribe((data:any)=>{
           this.message = data
