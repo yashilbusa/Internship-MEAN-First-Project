@@ -13,6 +13,7 @@ app.use(express.urlencoded({extended:false}))
 dotenv.config()
 
 app.use("/tasks",taskRoutes)
+
 try{
     await mongoose.connect(process.env.url)
     console.log('Connected to MongoDB');
