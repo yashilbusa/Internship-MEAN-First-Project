@@ -20,7 +20,13 @@ export class ApiService {
     return this.http.get(this.taskUrl,{responseType: 'text'});
   }
 
-  createTask(task: any, any: any):Observable<any>{
-    return this.http.post(this.taskUrl,task);
+  createTask():Observable<any>{
+    return this.http.post(this.taskUrl,{
+      "title":"Job Interview",
+      "description":"Selected Or Not",
+      "completed":true
+    },{
+      headers: { 'Content-Type': 'application/json' }
+  });
   }
 }
